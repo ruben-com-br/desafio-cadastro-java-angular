@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=¨pt-br¨>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Cadastro de Clientes</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Sistema de Cadastro de Clientes</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/phonenumbers/}">Outros Cadastros</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <h1> Lista de Telefones do  ${client.name}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/phonenumbers/new/{id} (id=${client.id})}" class="btn btn-primary btn-sm mb-3"> Adicionar Telefone</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th> Telefones</th>
+            <th> Ações</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="phone: ${list}">
+            <td th:text="${phone.number}"></td>
+            <td>
+                <a th:href="@{/phonenumbers/edit/{id}(id=${phone.id})}"
+                   class="btn btn-primary">Atualizar Telefone</a>
+
+                <a th:href="@{/phonenumbers/delete/{id}(id=${phone.id})}"
+                   class="btn btn-danger">Deletar</a>
+
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
