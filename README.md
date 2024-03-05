@@ -2,13 +2,13 @@
 ### Requisitos
 Para rodar o projeto é necessário:
 
-Java 17+
-Maven 3.6.3
-IDE Intellij, VSCode ou outra
+* Java 17+
+* Maven 3.6.3
+* IDE: Intellij, VSCode ou outra
 
 ### Buildar o projeto
 mvn clean install
 
 ### URL da aplicação
-localhost:8080/clients
-https://desafio-cadastro-java-angular.onrender.com/clients
+* Local: localhost:8080/clients
+* Deploy: https://desafio-cadastro-java-angular.onrender.com/clients
